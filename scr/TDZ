@@ -1,0 +1,16 @@
+ 
+ {
+  console.log(theme);                 // Line ①
+  const { mode: theme = "light" } = getSettings(); // Line ②
+  function getSettings() { return { mode: "dark" }; }
+ }
+
+//  what will happen in the console:
+
+// ReferenceError: Cannot access 'theme' before initialization
+
+// This is due to the Temporal Dead Zone (TDZ)
+
+// variables declared with const are in the TDZ and not accessible until their declaration is fully evaluated.
+
+// theme is declared in line 2 therefore any access to it before that line throws an error Message 

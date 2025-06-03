@@ -1,0 +1,22 @@
+function test() {
+  console.log(value); // Line ①
+  if (true) {
+    var value = 42;
+  }
+  console.log(value); // Line ②
+ }
+ test();
+
+// what happens in the console:
+
+ undefined
+ 42
+ 
+//  why does this happen?
+// JavaScript hoists var declarations to the top of their function scope, but not the assignment.
+
+// In line 1 the value exist but it has not been assigned yet hence the console prints undefined and not an error.
+
+// In line 2  the value has been set to 42 thus the console prints 42.
+
+ 
